@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h2>College Students CRUD app</h2>
+      <div class="search-div">
+        <input
+          type="text"
+          placeholder="search"
+          id="search-input"
+          onchange="search()"
+        />
+        <img src="images/searchIcon.png" alt="" class="search-icon" />
+      </div>
+    </header>
+    <table id="table" cellspacing="0" cellpadding="10">
+      <tr>
+        <th>Roll No.</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Class</th>
+        <th>Section</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>001</td>
+        <td>John</td>
+        <td>Smith</td>
+        <td>smith.john@abc.com</td>
+        <td>First year</td>
+        <td>A</td>
+        <td>
+          <button class="editBtn" onclick="edit(this.parentNode.parentNode)">
+            Edit</button
+          ><button
+            class="deleteBtn"
+            onclick="deleteRows(this.parentNode.parentNode)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>002</td>
+        <td>Jack</td>
+        <td>Williams</td>
+        <td>williams.jack@abc.com</td>
+        <td>First year</td>
+        <td>A</td>
+        <td>
+          <button class="editBtn" onclick="edit(this.parentNode.parentNode)">
+            Edit</button
+          ><button
+            class="deleteBtn"
+            onclick="deleteRows(this.parentNode.parentNode)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>003</td>
+        <td>James</td>
+        <td>Williams</td>
+        <td>williams.james@abc.com</td>
+        <td>First year</td>
+        <td>A</td>
+        <td>
+          <button class="editBtn" onclick="edit(this.parentNode.parentNode)">
+            Edit</button
+          ><button
+            class="deleteBtn"
+            onclick="deleteRows(this.parentNode.parentNode)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>004</td>
+        <td>Sam</td>
+        <td>Smith</td>
+        <td>smith.sam@abc.com</td>
+        <td>Third year</td>
+        <td>A</td>
+        <td>
+          <button class="editBtn" onclick="edit(this.parentNode.parentNode)">
+            Edit</button
+          ><button
+            class="deleteBtn"
+            onclick="deleteRows(this.parentNode.parentNode)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>005</td>
+        <td>Maz</td>
+        <td>Ruit</td>
+        <td>ruit.maz@abc.com</td>
+        <td>First year</td>
+        <td>A</td>
+        <td>
+          <button class="editBtn" onclick="edit(this.parentNode.parentNode)">
+            Edit</button
+          ><button
+            class="deleteBtn"
+            onclick="deleteRows(this.parentNode.parentNode)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>006</td>
+        <td>Max</td>
+        <td>Ruin</td>
+        <td>ruin.max@abc.com</td>
+        <td>Second year</td>
+        <td>B</td>
+        <td>
+          <button class="editBtn" onclick="edit(this.parentNode.parentNode)">
+            Edit</button
+          ><button
+            class="deleteBtn"
+            onclick="deleteRows(this.parentNode.parentNode)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </table>
+    <p id="error"></p>
+    <div id="updatePopup">
+      <h3>Update Student Details</h3>
+      <div class="modal-field">
+        <label for="rollno">Roll No. :</label>
+        <input type="number" id="rollno" class="updateinfo" />
+      </div>
+      <div class="modal-field">
+        <label for="firstName">First Name :</label>
+        <input type="text" id="firstName" class="updateinfo" />
+      </div>
+      <div class="modal-field">
+        <label for="lastName">Last Name :</label>
+        <input type="text" id="lastName" class="updateinfo" />
+      </div>
+      <div class="modal-field">
+        <label for="email">Email :</label>
+        <input type="email" id="email" class="updateinfo" />
+      </div>
+      <div class="modal-field">
+        <label for="class">Class :</label>
+        <input type="text" id="class" class="updateinfo" />
+      </div>
+      <div class="modal-field">
+        <label for="section">Section :</label>
+        <input type="text" id="section" class="updateinfo" />
+      </div>
+      <div class="modal-btns">
+        <button class="cancelBtn" onclick="closePopup()">Cancel</button>
+        <button class="updateBtn" onclick="update()">Update</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

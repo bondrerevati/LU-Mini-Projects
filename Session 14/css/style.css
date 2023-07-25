@@ -1,0 +1,121 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #8af4c8;
+}
+h2 {
+  margin: 0;
+}
+table {
+  margin: 20px auto;
+}
+th {
+  background-color: #8af4c8;
+}
+table {
+  border: 1px solid #eee;
+  text-align: center;
+}
+.deleteBtn {
+  background-color: #f85d5d;
+}
+.editBtn {
+  background-color: #e79e16;
+}
+button {
+  margin: 5px;
+  background-color: #fff;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.search-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  border: 1px solid #eee;
+  padding-left: 10px;
+  background-color: #fff;
+}
+#search-input {
+  height: 20px;
+  border: 0;
+}
+#search-input:focus {
+  outline: none;
+}
+.search-icon {
+  padding-right: 10px;
+  color: #a5a2a2;
+  cursor: pointer;
+  height: 20px;
+}
+.updatePopup {
+  margin: 0 auto;
+  width: 100%;
+}
+main {
+  margin: 0 auto;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+#error {
+  text-align: center;
+}
+#updatePopup {
+  display: none;
+  margin: 10px auto;
+  height: auto;
+  width: 40%;
+  padding: 10px 25px 30px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  position: relative;
+}
+#updatePopup h3 {
+  text-align: center;
+  margin: 10px;
+}
+.modal-field {
+  margin: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.updatedata {
+  width: 50%;
+  height: 20px;
+  border: none;
+  border: 1px solid #eee;
+}
+.modal-btns {
+  right: 45px;
+  bottom: 10px;
+  position: absolute;
+}
+.updateBtn {
+  background-color: #395e39;
+  margin-left: 10px;
+}
+.cancelBtn {
+  background-color: #f85d5d;
+}
+Button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
