@@ -1,0 +1,160 @@
+API Documentation
+
+Description:
+This consists of APIs related to movies database.
+1. A endpoint to get a list of movies.
+2. A endpoint to get a single movie based on id.
+3. A endpoint to delete a movie.
+4. A endpoint to update a movie.
+5. A endpoint to create a movie.
+6. A endpoint to get movies based on name / name search.
+
+Base URL: 
+The base URL for all API requests is:
+http://localhost:8080/
+
+Endpoints
+
+1. GET /getmovies
+   Returns a list of all movies present in the database.
+   Body: None
+   Response:
+   Returns a JSON object that contains array of movies object, each object contains the following properties:
+   - 'id': The unique identifier of the movie.
+   - 'title': The title of the movie.
+   - 'year': The movie released year.
+   - 'desc': A brief description of the movie.
+   Note: If no movies are present in the database, an appropriate error message will be received in the response.
+   Example: 
+    Request:
+        GET /getmovies
+    Response:
+        [
+            {
+                "_id": "64d0f20a9a31aab37c4777f4",
+                "title": "Avatar:Special Edition",
+                "year": 2010,
+                "desc": "You can hardly spot the difference between the old and the new Avatar, unless you've studied it minutely and seen it several times in its first edition."
+            },
+            ...
+        ]
+
+2. GET /getsinglemovie
+   Returns a movie based on the unique id sent in the request.
+   Body: 
+   id (required): The unique id of the movie.
+   Response:
+   Returns a JSON object that contains a movie object with the following properties:
+   - 'id': The unique identifier of the movie.
+   - 'title': The title of the movie.
+   - 'year': The movie released year.
+   - 'desc': A brief description of the movie.
+   Note: If the movie having the unique id sent in the request is not found in the database, an appropriate error message will be received in the response.
+   Example: 
+    Request:
+        GET /getsinglemovie
+    Body:
+        {
+            "id":"64d0f20a9a31aab37c4777f4"
+        }
+    Response:
+        {
+            "_id": "64d0f20a9a31aab37c4777f4",
+            "title": "Avatar:Special Edition",
+            "year": 2010,
+            "desc": "You can hardly spot the difference between the old and the new Avatar, unless you've studied it minutely and seen it several times in its first edition."
+        }
+3. DELETE /deletemovie
+   Deletes a movie from the database which is having the unique id sent in the request.
+   Body: 
+   id (required): The unique id of the movie.
+   Response:
+   Returns a "Movie deleted successfully!" message in the response.
+   Note: If the movie having the unique id sent in the request is not present in the database, an appropriate error message will be received in the response.
+   Example: 
+    Request:
+        DELETE /deletemovie
+    Body:
+        {
+            "id":"64d0f4b2539a5e0af1d47392"
+        }
+    Response:
+        Movie deleted successfully!
+4. PUT /updatemovie
+   Updates the movie data in the database which is having the unique id sent in the request.
+   Body: 
+   id (required): The unique id of the movie.
+   title (optional): The title of the movie.
+   year (optional): The movie released year.
+   desc (optional): A brief description of the movie.
+   Response:
+   Returns a success message with the updated movie in the response.
+   Note: If the movie having the unique id sent in the request is not present in the database, an appropriate error message will be received in the response.
+   Example: 
+    Request:
+        PUT /updatemovie
+    Body:
+        {
+            "id":"64d109da4dd3cdf63bda1fee",
+            "title":"Oppenheimer",
+            "year":2023,
+            "desc":"Nolan’s Oppenheimer is a devastating biographical drama, one of his finest works."   
+        }
+    Response:
+        Movie updated successfully. An updated movie is {
+        _id: new ObjectId("64d109da4dd3cdf63bda1fee"),
+        title: 'Oppenheimer',
+        year: 2023,
+        desc: 'Nolan’s Oppenheimer is a devastating biographical drama, one of his finest works.'
+        }
+5. POST /addmovie
+   Adds a movie to the database with the data sent in the request.
+   Body: 
+   title (required): The title of the movie.
+   year (required): The movie released year.
+   desc (required): A brief description of the movie.
+   Response:
+   Returns a success message.
+   Example: 
+    Request:
+        POST /addmovie
+    Body:
+        {
+            "title":"Everything Everywhere All At Once",
+            "year":2022,
+            "desc":"Easily one of the best movies of the year and arguably one of the most memorable action comedies of all time, this film simply cannot be missed."
+        }
+    Response:
+        Movie added successfully. 
+6. GET /searchmovie
+   Searches the movie based on the movie name sent in the request and returns the movies' details.
+   Body: 
+   title(required): The title of the movie
+   Response:
+   Returns a JSON object that contains array of movies objects, and each object contains the following properties:
+   - 'id': The unique identifier of the movie.
+   - 'title': The title of the movie.
+   - 'year': The movie released year.
+   - 'desc': A brief description of the movie.
+   Note: If the movie name sent in the request is not found in the database, an appropriate error message will be received in the response.
+   Example
+    Request: 
+        GET /searchmovie
+    Body:
+        {
+             "title":"Inception"
+        }
+    Response:
+        [
+            {
+                "_id": "64d0f24e9a31aab37c4777f5",
+                "title": "Inception",
+                "year": 2010,
+                "desc": "Go, get intrigued and push the boundaries of your mind.Go, get intrigued and push the boundaries of your mind."
+            },
+            ...
+        ]
+
+Errors
+These APIs uses the following error code:
+500 Internal Server Error: Some error occurred.
